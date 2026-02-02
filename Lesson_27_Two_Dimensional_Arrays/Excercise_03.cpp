@@ -1,60 +1,41 @@
 #include <iostream>
 using namespace std;
 
+void printArray(int arr[4][4]) {
 
-void fillarr3(int Arr1[5][5], int Arr2[5][5], int Arr3[5][5]) {
+    for (int i = 0; i < 4; i++) {
 
-	for (int i = 0; i < 5; i++)
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			Arr3[i][j] = Arr1[i][j] + Arr2[i][j];
-		}
-	}
+        for (int j = 0; j < 4; j++) {
+            cout << arr[i][j] << " ";
+
+        }
+        cout << "\n";
+    }
 }
 
-void printarr3(int Arr3[5][5]) {
+void reverseRows(int arr[4][4]) {
+    for (int i = 0; i < 2; i++) {
 
-	for (int i = 0; i < 5; i++)
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			int value = Arr3[i][j];
+        for (int j = 0; j < 4; j++) {
 
-			if (value > 10)
-			{
-				value = 10;
-			}
-
-			printf("%0*d ", 2, value);
-		}
-		cout << endl;
-	}
-
-
+            swap(arr[i][j], arr[3 - i][j]);
+        }
+    }
 }
-
 
 int main() {
+    int Arr1[4][4]{
+        {6,4,8,7},
+        {9,2,7,2},
+        {3,5,1,6},
+        {4,4,2,4}
+    };
 
-	int Arr1[5][5]{
-		{6,4,2,7,2},
-		{3,5,1,6,4},
-		{3,5,1,6,4},
-		{4,6,2,4,5},
-		{5,6,7,8,9}
-	};
+    cout << "Original Array:\n";
+    printArray(Arr1);
 
-	int Arr2[5][5]{
-		{6,4,2,7,2},
-		{3,5,1,6,4},
-		{3,5,1,6,4},
-		{4,6,2,4,5},
-		{5,6,7,8,9}
-	};
+    reverseRows(Arr1);
 
-	int Arr3[5][5];
-
-	fillarr3(Arr1, Arr2, Arr3);
-	printarr3(Arr3);
+    cout << "\nReversed Rows Array:\n";
+    printArray(Arr1);
 }
