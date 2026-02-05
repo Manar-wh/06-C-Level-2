@@ -33,6 +33,7 @@ int main() {
 	for (stEmployee& E : vEmployees) {
 
 		cout << "First Name = " << E.FirsName << endl;
+		cout << "Last Name = " << E.LastName << endl;
 		cout << "Salary = " << E.Salary << endl;
 		cout << "\n";
 
@@ -40,3 +41,4 @@ int main() {
 
 
 }
+
