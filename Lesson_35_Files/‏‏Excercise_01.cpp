@@ -15,9 +15,11 @@ int main()
 		MyFile << "Hi this is the first line \n";
 		MyFile << "Hi this is the second line \n";
 		MyFile << "Hi this is the third line \n";
+	
+		MyFile.close();
 	}
 
-	MyFile.close();
 
 	return 0;
 }
+
